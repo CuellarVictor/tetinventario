@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="
+background-color: #3F488D !important;
+"
+*ngIf="getRol() != 0"
+>
+    <a class="navbar-brand" href="/login" style="
+    padding-left: 20px;
+"><b>HOME</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" >
+          <a class="nav-link" style="color :white !important;" href="/productos">Productos</a>
+        </li>
+        <li class="nav-item" *ngIf="getRol() == 1" >
+          <a class="nav-link" style="color :white !important;" href="/user">Usuarios</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link" style="color :white !important;" href="/login">Cerrar sesión</a>
+        </li>
+      </ul>
+    </div>
+    <div style="padding-right: 40px;">
+      <b *ngIf="getRol() == 1" style="color :white !important;">Usuario Administrador</b>
+      <b *ngIf="getRol() == 2" style="color :white !important;">Usuario General</b>
+    </div>
+    
+  </nav>
